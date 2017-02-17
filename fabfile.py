@@ -139,7 +139,6 @@ def install_syscore():
             sudo("aptitude install -y pybluez")
         else:
 
-
 def install_pycore():
     """ Download and install VirtualEnv """
     sudo("pip3 install --upgrade pip")
