@@ -132,6 +132,13 @@ def install_syscore():
     sudo("aptitude install -y libxrandr-dev")
     sudo("aptitude install -y python-dev")
     sudo("aptitude install -y swig")
+        if pi_hardware == "armv7l":
+            sudo("aptitude install -y ipython")
+            sudo("aptitude install -y bluetooth")
+            sudo("aptitude install -y libbluetooth-dev")
+            sudo("aptitude install -y pybluez")
+        else:
+
 
 def install_pycore():
     """ Download and install VirtualEnv """
