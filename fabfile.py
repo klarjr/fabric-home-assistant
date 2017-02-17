@@ -74,13 +74,16 @@ def install_start():
     time.sleep(5)
 
 
-
 def update_upgrade():
     """ Update OS """
-    sudo("apt-get upgrade -y")
-    sudo("rm /boot/.firmware_revision")
-    sudo("apt-get update")
+    if pi_hardware == "armv7l":
+        sudo("apt-get upgrade -y")
+        sudo("rm /boot/.firmware_revision")
+        sudo("apt-get update")
+    else:
+        sudo("apt-get upgrade -y")
 
+ 
 def setup_dirs():
     """ Create all needed directories and change ownership """
     with cd("/srv"):
