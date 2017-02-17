@@ -77,9 +77,9 @@ def install_start():
 
 def update_upgrade():
     """ Update OS """
-    sudo("apt-get update")
     sudo("apt-get upgrade -y")
-
+    sudo("rm /boot/.firmware_revision")
+    sudo("apt-get update")
 
 def setup_dirs():
     """ Create all needed directories and change ownership """
