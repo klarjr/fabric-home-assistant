@@ -76,13 +76,10 @@ def install_start():
 
 def update_upgrade():
     """ Update OS """
-    if pi_hardware == "armv7l":
-        sudo("apt-get upgrade -y")
-        sudo("rm /boot/.firmware_revision")
-        sudo("apt-get update")
-    else:
-        sudo("apt-get upgrade -y")
-
+    sudo("apt-get upgrade -y")
+    sudo("rm /boot/.firmware_revision")
+    sudo("apt-get update")
+    
  
 def setup_dirs():
     """ Create all needed directories and change ownership """
@@ -135,12 +132,10 @@ def install_syscore():
     sudo("aptitude install -y libxrandr-dev")
     sudo("aptitude install -y python-dev")
     sudo("aptitude install -y swig")
-        if pi_hardware == "armv7l":
-            sudo("aptitude install -y ipython")
-            sudo("aptitude install -y bluetooth")
-            sudo("aptitude install -y libbluetooth-dev")
-            sudo("aptitude install -y pybluez")
-        else:
+    sudo("aptitude install -y ipython")
+    sudo("aptitude install -y bluetooth")
+    sudo("aptitude install -y libbluetooth-dev")
+    sudo("aptitude install -y pybluez")
 
 def install_pycore():
     """ Download and install VirtualEnv """
